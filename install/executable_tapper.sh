@@ -1,8 +1,9 @@
 #!/bin/bash
 
-cd ~/install/src
+cd ~/install
 
-tar xzf tapper-0.7.4-0.vdb.1.tar.gz
+mkdir tapper
+tar xzf ./src/tapper-0.7.4-0.vdb.1.tar.gz tapper
 cd tapper-0.7.4-0.vdb.1
 
 mkdir _build
