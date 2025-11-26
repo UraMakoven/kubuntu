@@ -2,9 +2,9 @@
 
 #add layouts
 kwriteconfig5 --file kxkbrc --group Layout --key LayoutList "us,ru,ua"
+kwriteconfig5 --file kxkbrc --group Layout --key Use true
 #change mode
-kwriteconfig5 --file kxkbrc --group Layout --key PerWindow true
-
+kwriteconfig5 --file kxkbrc --group Layout --key SwitchMode "Window"
 
 cd ~/install
 
