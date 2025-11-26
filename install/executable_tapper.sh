@@ -1,5 +1,7 @@
 #!/bin/bash
 
+kwriteconfig5 --file kxkbrc --group Layout --key LayoutList "us,ru,ua"
+
 cd ~/install
 
 mkdir tapper
