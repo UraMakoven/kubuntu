@@ -5,7 +5,8 @@ kwriteconfig5 --file kxkbrc --group Layout --key LayoutList "us,ru,ua"
 cd ~/install
 
 mkdir tapper
-tar xzf ./src/tapper-0.7.4-0.vdb.1.tar.gz
+cd tapper
+tar xzf ../src/tapper-0.7.4-0.vdb.1.tar.gz
 cd tapper-0.7.4-0.vdb.1
 
 mkdir _build
