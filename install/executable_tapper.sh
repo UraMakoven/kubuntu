@@ -1,6 +1,10 @@
 #!/bin/bash
 
+#add layouts
 kwriteconfig5 --file kxkbrc --group Layout --key LayoutList "us,ru,ua"
+#change mode
+kwriteconfig5 --file kxkbrc --group Layout --key PerWindow true
+
 
 cd ~/install
 
