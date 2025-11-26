@@ -1,7 +1,9 @@
 #!/bin/bash
 
-sudo apt update
-sudo apt -y upgrade
+cd ~/install
+
+#sudo apt update
+#sudo apt -y upgrade
 
 sudo apt -y install mc
 
