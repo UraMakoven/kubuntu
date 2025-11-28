@@ -7,8 +7,10 @@ cd ~/.dotfiles/install
 
 sudo apt -y install stow
 
-cd `/.dotfiles/packages
+cd ~/.dotfiles/packages
 stow -t ~ */
+
+cd ~/.dotfiles/install
 
 sudo apt -y install mc
 
