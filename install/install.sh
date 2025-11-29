@@ -14,3 +14,5 @@ sudo apt -y install stow
 "$INSTALL_DIR/tapper.sh"
 
 "$INSTALL_DIR/snap.sh"
+
+"$INSTALL_DIR/zsh.sh"
