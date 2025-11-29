@@ -27,4 +27,6 @@ sudo rm -rf /var/snap
 sudo rm -rf /var/lib/snapd
 sudo rm -rf /var/cache/snapd
 
+sudo apt -y autoremove
+
 echo "Snap полностью удален!"

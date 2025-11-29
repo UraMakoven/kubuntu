@@ -13,6 +13,6 @@ sudo apt -y install stow
 "$INSTALL_DIR/mc.sh"
 "$INSTALL_DIR/tapper.sh"
 
-"$INSTALL_DIR/snap.sh"
+"$INSTALL_DIR/snapd.sh"
 
 "$INSTALL_DIR/zsh.sh"
