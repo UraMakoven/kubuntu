@@ -10,6 +10,8 @@ export INSTALL_DIR="$CUR_DIR"
 
 sudo apt -y install stow
 
+"$INSTALL_DIR/kde.sh"
+
 "$INSTALL_DIR/mc.sh"
 "$INSTALL_DIR/tapper.sh"
 
