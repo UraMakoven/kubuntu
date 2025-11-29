@@ -4,6 +4,7 @@ tar xzf "$INSTALL_DIR/src/zshplugins.tar.gz" -C ~
 
 rm ~/.config/konsolerc
 rm ~/.local/share/konsole/ura.profile
+rm ~/.local/share/kxmlgui5/konsole/*
 
 mkdir -p ~/.local/share/fonts
 tar xzf "$INSTALL_DIR/src/fonts.tar.gz" -C ~/.local/share/fonts
