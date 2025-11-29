@@ -44,23 +44,7 @@ export FZF_DEFAULT_COMMAND="fdfind --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fdfind --type=d --hidden --strip-cwd-prefix --exclude .git"
 
-
-
-# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
-# - The first argument to the function ($1) is the base path to start traversal
-# - See the source code (completion.{bash,zsh}) for the details.
-#_fzf_compgen_path() {
-#  fdfind --hidden --exclude .git . "$1"
-#}
-
-# Use fd to generate the list for directory completion
-#_fzf_compgen_dir() {
-#  fdfind --type=d --hidden --exclude .git . "$1"
-#}
-
 source ~/.zsh/fzf-git.sh/fzf-git.sh
-
-#show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else batcat -n --color=always --line-range :500 {}; fi"
 
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
@@ -160,12 +144,6 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 
 source ~/.zsh/zsh-shift-select/zsh-shift-select.plugin.zsh
 
-#bindkey ';6D' select-word-left ## not working yet
-#bindkey ';6C' select-word-right ## not working yet
-
-#bindkey '^[[1;6D' select-char-left   # assuming xterm
-#bindkey '^[[1;5C' select-char-right  # assuming xterm
-
 bindkey ';5D' backward-word
 bindkey ';5C' forward-word
 
@@ -177,20 +155,8 @@ bindkey  "^[[3~"  delete-char
 eval "$(zoxide init zsh)"
 alias cd="z"
 
-alias df='duf --hide-mp "/run/credentials/*"'
-alias ping='gping'
-
 alias lara='cd ~/docker/laravel/ && docker compose up'
 alias laraart='cd ~/docker/laravel/ && docker compose exec app /artisan.sh $1 $2 $3 $4 $5'
-
-#function apt() {
-#    if [ "$1" = "edit-sources" ]; then
-#        sudo nano /etc/apt/sources.list
-#    else
-#        sudo nala "$@"
-#    fi
-#}
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -198,15 +164,5 @@ export NVM_DIR="$HOME/.nvm"
 
 source /etc/zsh_command_not_found
 
-PATH="${PATH:+${PATH}:}/opt/st/stm32cubeclt_1.17.0/GNU-tools-for-STM32/bin"
 PATH="${PATH:+${PATH}:}/home/ura/.config/composer/vendor/bin"
 PATH="${PATH:+${PATH}:}/home/ura/.local/bin"
-PATH="${PATH:+${PATH}:}/home/ura/bin"
-
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/ura/.lmstudio/bin"
-# End of LM Studio CLI section
-

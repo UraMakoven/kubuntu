@@ -1,0 +1,14 @@
+[Desktop Entry]
+DefaultProfile=ura.profile
+
+[General]
+ConfigVersion=1
+
+[MainWindow]
+State[$d]
+
+[Notification Messages]
+CloseAllTabs=true
+
+[UiSettings]
+ColorScheme=

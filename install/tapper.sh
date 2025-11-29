@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if command -v tapper >/dev/null 2>&1; then
+    echo "Tapper уже установлен. Выход."
+    exit 0
+fi
+
 #add layouts
 kwriteconfig5 --file kxkbrc --group Layout --key LayoutList "us,ru,ua"
 kwriteconfig5 --file kxkbrc --group Layout --key Use true
@@ -9,7 +14,7 @@ kwriteconfig5 --file kxkbrc --group Layout --key SwitchMode "Window"
 cd "$INSTALL_DIR"
 mkdir tapper
 cd tapper
-tar xzf ../src/tapper-0.7.4-0.vdb.1.tar.gz
+tar xzf "$INSTALL_DIR/src/tapper-0.7.4-0.vdb.1.tar.gz"
 cd tapper-0.7.4-0.vdb.1
 
 mkdir _build
