@@ -6,6 +6,7 @@ kwriteconfig5 --file kxkbrc --group Layout --key Use true
 #change mode
 kwriteconfig5 --file kxkbrc --group Layout --key SwitchMode "Window"
 
+cd "$INSTALL_DIR"
 mkdir tapper
 cd tapper
 tar xzf ../src/tapper-0.7.4-0.vdb.1.tar.gz

@@ -1,18 +1,16 @@
 #!/bin/bash
 
-cd ~/.dotfiles/install
+CUR_DIR="$(cd "$(dirname "$0")" && pwd)"
+STOW_DIR="${CUR_DIR/install/packages}"
+export STOW_DIR
+export INSTALL_DIR="$CUR_DIR"
 
 #sudo apt update
 #sudo apt -y upgrade
 
 sudo apt -y install stow
 
-cd ~/.dotfiles/packages
-stow -t ~ */
+"$INSTALL_DIR/mc.sh"
+"$INSTALL_DIR/tapper.sh"
 
-cd ~/.dotfiles/install
-
-sudo apt -y install mc
-
-./snap.sh
-./tapper.sh
+"$INSTALL_DIR/snap.sh"
