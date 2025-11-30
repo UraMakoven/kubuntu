@@ -1,9 +1,0 @@
-[Data/MyHotkey]
-Comment=Запуск flameshot
-Enabled=true
-Type=COMMAND_URL
-CommandURL=sh -c -- "QT_QPA_PLATFORM=wayland flameshot gui --raw | wl-copy -f"
-
-[Data/MyHotkey/Trigger0]
-Type=SHORTCUT
-Shortcut=Print

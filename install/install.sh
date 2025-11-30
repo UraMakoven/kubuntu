@@ -15,8 +15,8 @@ while true; do
 done &
 SUDO_REFRESH_PID=$!
 
-#sudo apt update
-#sudo apt -y upgrade
+sudo apt update
+sudo apt -y upgrade
 
 sudo apt -y install stow
 
