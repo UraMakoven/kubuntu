@@ -12,8 +12,12 @@ kwriteconfig6 --file kwinrc --group "NightColor" --key "Active" true
 
 kwriteconfig6 --file kscreenlockerrc --group Daemon --key "LockGrace" 60
 
-kwriteconfig6 --file kactivitymanagerdrc --group Plugins --key org.kde.ActivityManager.ResourceScoringEnabled false
-kwriteconfig6 --file kactivitymanagerdrc --group General --key KeepHistory false
+kwriteconfig6 --file kactivitymanagerdrc --group "General" --key "keepHistory" false
+kwriteconfig6 --file kprivacyrc --group "RecentUsage" --key "rememberActivity" false
+kwriteconfig6 --file kprivacyrc --group "RecentUsage" --key "rememberDocuments" false
+kwriteconfig6 --file kprivacyrc --group "RecentUsage" --key "rememberApplications" false
+kwriteconfig6 --file kiorc --group "RecentDocuments" --key "MaxRecentDocuments" 0
 
 kwriteconfig6 --file ksmserverrc --group General --key loginMode emptySession
+kwriteconfig6 --file ksmserverrc --group General --key confirmLogout false
 
