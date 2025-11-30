@@ -12,9 +12,13 @@ sudo apt -y install stow
 
 "$INSTALL_DIR/kde.sh"
 
+"$INSTALL_DIR/feedback.sh"
+
 "$INSTALL_DIR/mc.sh"
 "$INSTALL_DIR/tapper.sh"
 
 "$INSTALL_DIR/snapd.sh"
 
 "$INSTALL_DIR/zsh.sh"
+
+"$INSTALL_DIR/flameshot.sh"
