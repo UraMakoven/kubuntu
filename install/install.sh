@@ -31,7 +31,7 @@ sudo apt -y install stow
 
 "$INSTALL_DIR/zsh.sh"
 
-"$INSTALL_DIR/flameshot.sh"
+#"$INSTALL_DIR/flameshot.sh"
 
 # по завершению убить обновление таймера
 kill $SUDO_REFRESH_PID

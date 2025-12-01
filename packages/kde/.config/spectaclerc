@@ -1,0 +1,15 @@
+[Annotations]
+annotationToolType=10
+
+[General]
+clipboardGroup=PostScreenshotCopyImage
+showCaptureInstructions=false
+
+[GuiConfig]
+quitAfterSaveCopyExport=true
+
+[ImageSave]
+translatedScreenshotsFolder=Screenshots
+
+[VideoSave]
+translatedScreencastsFolder=Screencasts
