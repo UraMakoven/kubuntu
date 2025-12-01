@@ -22,6 +22,7 @@ kwriteconfig6 --file ksmserverrc --group General --key loginMode emptySession
 kwriteconfig6 --file ksmserverrc --group General --key confirmLogout false
 
 rm ~/.config/krunnerrc
+rm ~/.config/klipperrc
 rm ~/.config/spctaclerc
 
 stow -t ~ kde
