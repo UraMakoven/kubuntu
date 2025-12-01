@@ -1,7 +1,0 @@
-[Desktop Entry]
-Exec=sh -c -- "QT_QPA_PLATFORM=wayland flameshot gui --raw | wl-copy -f"
-Name=Flameshot
-NoDisplay=true
-StartupNotify=false
-Type=Application
-X-KDE-GlobalAccel-CommandShortcut=true

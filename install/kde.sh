@@ -21,8 +21,9 @@ kwriteconfig6 --file kiorc --group "RecentDocuments" --key "MaxRecentDocuments" 
 kwriteconfig6 --file ksmserverrc --group General --key loginMode emptySession
 kwriteconfig6 --file ksmserverrc --group General --key confirmLogout false
 
-rm ~/.config/krunnerrc
-rm ~/.config/klipperrc
-rm ~/.config/spctaclerc
+stow -nvt ~ kde --adopt 2>&1 | grep "LINK:" | awk '{print $2}' | while read f; do
+    echo "Deleting $HOME/$f"
+    rm -f "$HOME/$f"
+done
 
 stow -t ~ kde
