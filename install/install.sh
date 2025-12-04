@@ -18,7 +18,10 @@ SUDO_REFRESH_PID=$!
 sudo apt update
 sudo apt -y upgrade
 
-sudo apt -y install stow
+sudo apt -y install stow lazygit
+
+git config --global user.email "ura.makoven@gmail.com"
+git config --global user.name "$HOST"
 
 "$INSTALL_DIR/kde.sh"
 
@@ -32,6 +35,8 @@ sudo apt -y install stow
 "$INSTALL_DIR/zsh.sh"
 
 #"$INSTALL_DIR/flameshot.sh"
+
+sudo -y apt autoremove
 
 # по завершению убить обновление таймера
 kill $SUDO_REFRESH_PID
