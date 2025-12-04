@@ -34,6 +34,16 @@ git config --global user.name "$HOST"
 
 "$INSTALL_DIR/zsh.sh"
 
+"$INSTALL_DIR/brave.sh"
+
+"$INSTALL_DIR/dropbox.sh"
+
+"$INSTALL_DIR/keeweb.sh"
+
+"$INSTALL_DIR/obsidian.sh"
+
+"$INSTALL_DIR/vscode.sh"
+
 #"$INSTALL_DIR/flameshot.sh"
 
 sudo -y apt autoremove
