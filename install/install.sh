@@ -18,7 +18,7 @@ SUDO_REFRESH_PID=$!
 sudo apt update
 sudo apt -y upgrade
 
-sudo apt -y install stow lazygit
+sudo apt -y install stow lazygit git-crypt
 
 git config --global user.email "ura.makoven@gmail.com"
 git config --global user.name "$HOST"
@@ -38,13 +38,15 @@ git config --global user.name "$HOST"
 
 "$INSTALL_DIR/dropbox.sh"
 
-"$INSTALL_DIR/keeweb.sh"
+"$INSTALL_DIR/keepass.sh"
 
 "$INSTALL_DIR/obsidian.sh"
 
 "$INSTALL_DIR/vscode.sh"
 
-#"$INSTALL_DIR/flameshot.sh"
+"$INSTALL_DIR/appimage.sh"
+
+"$INSTALL_DIR/flatpak.sh"
 
 sudo -y apt autoremove
 
