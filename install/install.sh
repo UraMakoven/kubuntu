@@ -48,6 +48,8 @@ git config --global user.name "$HOST"
 
 "$INSTALL_DIR/flatpak.sh"
 
+"$INSTALL_DIR/copyq.sh"
+
 sudo -y apt autoremove
 
 # по завершению убить обновление таймера
