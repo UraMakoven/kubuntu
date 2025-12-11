@@ -50,6 +50,8 @@ git config --global user.name "$HOST"
 
 "$INSTALL_DIR/copyq.sh"
 
+"$INSTALL_DIR/web.sh"
+
 sudo -y apt autoremove
 
 # по завершению убить обновление таймера
