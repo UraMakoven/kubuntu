@@ -27,6 +27,8 @@ git config --global user.name "$HOST"
 
 "$INSTALL_DIR/feedback.sh"
 
+"$INSTALL_DIR/logs.sh"
+
 "$INSTALL_DIR/mc.sh"
 "$INSTALL_DIR/tapper.sh"
 
