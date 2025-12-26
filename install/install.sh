@@ -18,7 +18,7 @@ SUDO_REFRESH_PID=$!
 sudo apt update
 sudo apt -y upgrade
 
-sudo apt -y install stow lazygit git-crypt
+sudo apt -y install stow lazygit git-crypt lm-sensors
 
 git config --global user.email "ura.makoven@gmail.com"
 git config --global user.name "$HOST"
@@ -53,6 +53,8 @@ git config --global user.name "$HOST"
 "$INSTALL_DIR/copyq.sh"
 
 "$INSTALL_DIR/web.sh"
+
+"$INSTALL_DIR/pinta.sh"
 
 sudo -y apt autoremove
 
