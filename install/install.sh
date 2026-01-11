@@ -22,6 +22,7 @@ sudo apt -y install stow lazygit git-crypt lm-sensors
 
 git config --global user.email "ura.makoven@gmail.com"
 git config --global user.name "$HOST"
+git config pull.rebase true
 
 "$INSTALL_DIR/kde.sh"
 

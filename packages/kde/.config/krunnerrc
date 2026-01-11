@@ -1,3 +1,6 @@
+[General]
+FreeFloating=true
+
 [Plugins]
 baloosearchEnabled=false
 browserhistoryEnabled=false
@@ -6,7 +9,7 @@ calculatorEnabled=false
 helprunnerEnabled=false
 krunner_bookmarksrunnerEnabled=false
 krunner_charrunnerEnabled=false
-krunner_colorsEnabled=false
+krunner_colorsEnabled=true
 krunner_dictionaryEnabled=false
 krunner_katesessionsEnabled=false
 krunner_konsoleprofilesEnabled=false
