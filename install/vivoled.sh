@@ -30,3 +30,9 @@ sudo systemctl daemon-reload
 sudo systemctl start  asus-vivobook-rgb-keyboard
 
 sudo systemctl enable  asus-vivobook-rgb-keyboard
+
+wget https://github.com/tshakalekholoane/bat/releases/download/1.2/bat ~/Programs/bat
+sudo chmod +x ~/Programs/bat
+
+sudo ~/Programs/bat threshold 80
+sudo ~/Programs/bat persist

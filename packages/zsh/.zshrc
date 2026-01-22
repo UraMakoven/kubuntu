@@ -157,6 +157,7 @@ alias cd="z"
 
 alias lara='cd ~/docker/laravel/ && docker compose up'
 alias laraart='cd ~/docker/laravel/ && docker compose exec app /artisan.sh $1 $2 $3 $4 $5'
+alias laradb='cd ~/docker/laravel/ &&  docker exec -it laravel_db bash'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

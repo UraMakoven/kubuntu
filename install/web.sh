@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt -y install php composer php-xml php-gd php-bcmath npm
+sudo apt -y install php composer php-xml php-gd php-bcmath npm mysql-client-core
 
 sudo systemctl stop apache2
 sudo systemctl disable apache2
