@@ -53,6 +53,8 @@ git config pull.rebase true
 
 "$INSTALL_DIR/copyq.sh"
 
+"$INSTALL_DIR/flameshot.sh"
+
 "$INSTALL_DIR/web.sh"
 
 "$INSTALL_DIR/pinta.sh"
