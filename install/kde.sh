@@ -26,4 +26,9 @@ stow -nvt ~ kde --adopt 2>&1 | grep "LINK:" | awk '{print $2}' | while read f; d
     rm -f "$HOME/$f"
 done
 
+mkdir -p ~/.config/systemd/user.conf.d
+echo '[Manager]
+DefaultLimitNOFILE=65535
+' | tee ~/.config/systemd/user.conf.d/limits.conf > /dev/null
+
 stow -t ~ kde

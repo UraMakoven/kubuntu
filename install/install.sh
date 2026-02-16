@@ -20,6 +20,9 @@ sudo apt -y upgrade
 
 sudo apt -y install stow lazygit git-crypt lm-sensors
 
+echo 'vm.swappiness=15
+' | sudo tee /etc/sysctl.conf > /dev/null
+
 git config --global user.email "ura.makoven@gmail.com"
 git config --global user.name "$HOST"
 git config pull.rebase true
