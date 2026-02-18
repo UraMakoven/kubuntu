@@ -28,6 +28,9 @@ make -j
 sudo make install
 
 #29:KEY_LEFTCTRL, 54:KEY_RIGHTSHIFT, 97:KEY_RIGHTCTRL
-tapper --save-setting 29=@1, 97=@2, 54=@3
+#.config/autostart/tapper.desktop -> stow
+#Exec=env XDG_CONFIG_HOME=/tmp /usr/local/bin/tapper --quiet --syslog KEY_LEFTCTRL=@1 KEY_RIGHTCTRL=@2 KEY_RIGHTSHIFT
+#tapper --save-setting 29=@1, 97=@2, 54=@3
 
-tapper --autostart
+#tapper --autostart
+stow -t ~ tapper
