@@ -1,0 +1,121 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Prevent overlapping hotkey invocations
+exec 9>"${XDG_RUNTIME_DIR:-/tmp}/audio-switch-${UID}.lock"
+flock -n 9 || exit 0
+
+notify() {
+    if command -v notify-send >/dev/null 2>&1; then
+        notify-send -a "Audio Switch" \
+            -i audio-card \
+            -t 1800 \
+            -r 987654 \
+            "$1" "${2:-}"
+    fi
+}
+
+list_sinks() {
+    pactl list short sinks | awk '{print $2}'
+}
+
+show_devices() {
+    local current
+    current=$(pactl get-default-sink)
+
+    local i=0 sink
+    while IFS= read -r sink; do
+        ((i+=1))
+        if [[ "$sink" == "$current" ]]; then
+            printf '* %d: %s\n' "$i" "$sink"
+        else
+            printf '  %d: %s\n' "$i" "$sink"
+        fi
+    done < <(list_sinks)
+}
+
+switch_audio() {
+    local current next="" sink
+    local -a sinks=()
+
+    mapfile -t sinks < <(list_sinks)
+
+    # Optional two-device configuration
+    CONFIG="$HOME/.config/audio-switch.conf"
+
+    if [[ -f "$CONFIG" ]]; then
+	source "$CONFIG"
+
+        selected=()
+        for sink in "${sinks[@]}"; do
+            if [[ "$sink" == "$SINK1" || "$sink" == "$SINK2" ]]; then
+                selected+=("$sink")
+            fi
+        done
+        sinks=("${selected[@]}")
+    fi
+
+    if ((${#sinks[@]} == 0)); then
+        notify "Audio Switch" "Нет устройств вывода"
+        exit 1
+    fi
+
+    current=$(pactl get-default-sink)
+
+    if [[ -n "${1:-}" ]]; then
+        for sink in "${sinks[@]}"; do
+            if [[ "$sink" == "$1" ]]; then
+                next="$sink"
+                break
+            fi
+        done
+        if [[ -z "$next" ]]; then
+            echo "Устройство не найдено: $1" >&2
+            exit 1
+        fi
+    else
+        next="${sinks[0]}"
+        for i in "${!sinks[@]}"; do
+            if [[ "${sinks[i]}" == "$current" ]]; then
+                next="${sinks[$(((i + 1) % ${#sinks[@]}))]}"
+                break
+            fi
+        done
+    fi
+
+    pactl set-default-sink "$next"
+
+    # Move already playing applications
+    while read -r stream _; do
+        [[ -n "$stream" ]] || continue
+        pactl move-sink-input "$stream" "$next" ||
+            echo "Не удалось перенести поток $stream" >&2
+    done < <(pactl list short sink-inputs)
+
+    echo "Audio output: $next"
+    notify "Звук переключён" "$next"
+}
+
+case "${1:-next}" in
+    list)
+        show_devices
+        ;;
+    current)
+        pactl get-default-sink
+        ;;
+    next)
+        switch_audio
+        ;;
+    set)
+        [[ -n "${2:-}" ]] || {
+            echo "Usage: audio-switch set SINK_NAME" >&2
+            exit 1
+        }
+        switch_audio "$2"
+        ;;
+    *)
+        echo "Usage: audio-switch [next|list|current|set SINK_NAME]"
+        exit 1
+        ;;
+esac
